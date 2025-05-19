@@ -1,5 +1,6 @@
 #include<iostream>
 #include<math.h>
+#include<vector>
 
 using namespace std;
 int main(){
@@ -27,29 +28,46 @@ int main(){
     // a=4;
     // b=8;
     // cout<< (40>>2);
-    int a[]={5,15,22,1,-15,24};
-    int b=0,c=0;
-    int min=a[0],max=min;
-    int size=sizeof(a)/sizeof(a[0]);
-    for(int i=0;i<size;i++){
-        if(a[i]<min){
-            min=a[i];
-            b=i;
-        }
-        if(a[i]>max){
-            max=a[i];
-            c=i;
-        }
+    // int a[]={5,15,22,1,-15,24};
+    // int b=0,c=0;
+    // int min=a[0],max=min;
+    // int size=sizeof(a)/sizeof(a[0]);
+    // for(int i=0;i<size;i++){
+    //     if(a[i]<min){
+    //         min=a[i];
+    //         b=i;
+    //     }
+    //     if(a[i]>max){
+    //         max=a[i];
+    //         c=i;
+    //     }
+    // }
+    // for(int i=0,j=size-1;i<j;i++,j--){
+    //     int temp=a[i];
+    //     a[i]=a[j];
+    //     a[j]=temp;
+    // }
+    // for(int i=0;i<size;i++){
+    //     cout<<a[i]<<" ";
+    // }
+    // cout<<endl<<min<<" "<<b<<endl;
+    // cout<<max<<" "<<c<<endl;
+    vector<int> vec={1,2,4,5,6};
+    vector<int> a(3,0);
+    for(int val:vec){
+        cout<<val<<" ";
     }
-    for(int i=0,j=size-1;i<j;i++,j--){
-        int temp=a[i];
-        a[i]=a[j];
-        a[j]=temp;
+    cout<<vec.size()<<endl;
+    vec.push_back(1);
+    for(int val:vec){
+        cout<<val<<" "<<endl;
     }
-    for(int i=0;i<size;i++){
-        cout<<a[i]<<" ";
+    vec.pop_back();
+    for(int val:vec){
+        cout<<val<<" ";
     }
-    cout<<endl<<min<<" "<<b<<endl;
-    cout<<max<<" "<<c<<endl;
+    cout<<vec.front()<<endl;
+    cout<<vec.back()<<endl;
+    cout<<vec.at(6);
     return 0;
 }
