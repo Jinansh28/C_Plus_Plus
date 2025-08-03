@@ -62,5 +62,6 @@ int main(){
     ll.push_back(3);
     ll.push_back(4);
     ll.push_back(5);
-    ll.print();
+    ll.head=detectCycle(ll.head);
+    cout<<ll.head->data;
 }

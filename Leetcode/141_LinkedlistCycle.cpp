@@ -56,5 +56,5 @@ int main(){
     ll.push_back(3);
     ll.push_back(4);
     ll.push_back(5);
-    ll.print();
+    cout<<hasCycle(ll.head);
 }
