@@ -19,17 +19,27 @@ class Solution {
 public:
     Node* copyRandomList(Node* head) {
         if(head==NULL) return NULL;
-        unordered_map<int,int> m;
+        unordered_map<Node*,Node*> m;
         Node *str=head;
         Node *head2=new Node(str->val);
+        m[head]=head2;
         Node *prev=head2;
         str=str->next;
         while(str!=NULL){
             Node *temp=new Node(str->val);
+            m[str]=temp;
             str=str->next;
             prev->next=temp;
             prev=temp;
         }
+        str=head;
+        prev=head2;
+        while(str!=NULL){
+            prev->random=m[str->random];
+            prev=prev->next;
+            str=str->next;
+        }
+        return head2;
     }
 };
 
