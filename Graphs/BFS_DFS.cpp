@@ -50,7 +50,7 @@ void BFS(Graph g){
 
 void DFS(int u,vector<bool> &vi,Graph g){
     cout<<u<<" ";
-    
+    vi[u] = true;
     for(int i : g.l[u]){
         if(!vi[i]){
             vi[i] = true;
@@ -78,7 +78,6 @@ int main(){
 
     for(int i = 0 ; i < g.V ; i++){
         if(!vi[i]){
-            vi[i] = true;
             DFS(i,vi,g);
         }
     }
